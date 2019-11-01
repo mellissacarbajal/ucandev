@@ -1,7 +1,7 @@
 <template>
   <div class="home">
         <div class="row justify-content-md-center">
-            <div class="col-8">
+            <div class="col-12">
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Bloque DoWhile </h5>

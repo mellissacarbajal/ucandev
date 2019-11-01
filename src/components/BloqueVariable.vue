@@ -4,9 +4,9 @@
             <div class="col-12" >
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Bloque Leer </h5>
+                        <h5 class="card-title">Sentencia</h5>
                             <p class="card-text">{{ bloque.value }}
-                        {{variable}}</p>
+                            </p>
                     </div>
                 </div>
             </div>
@@ -16,13 +16,12 @@
 
 
 <script>
-// @ is an alias to /src
+
 export default {
-  name: 'bloqueLeer',
+  name: 'bloqueVariable',
   props: ["bloque"],
   data() {
     return {
-      variable: ""
     }
   },
   components: {
