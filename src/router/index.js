@@ -4,38 +4,48 @@ import Home from '../views/Home.vue'
 import Login from '../views/Auth/Login.vue'
 import Registro from '../views/Auth/Registro.vue'
 import firebase from 'firebase'
+import AuthLayout from '../views/Layout/AuthLayout.vue'
+import LayoutUCan from '../views/Layout/LayoutUCan.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
-  
-  {
-    path: '*',
-    redirect: '/login'
-  },
-  {
-    path: '/',
-    redirect: '/login'
-  },
-  {
-    path: '/login',
-    name: 'Login',
-    component: Login
-  },
-  {
-    path: '/registro',
-    name: 'Registro',
-    component: Registro
-  },
-  {
-    path: '/home',
-    name: 'Home',
-    component: Home,
-    meta: {
-      requiresAuth: true
+    {
+      path: '*',
+      redirect: '/login'
+    },
+    {
+      path: '/',
+      redirect: '/login',
+      component: AuthLayout,
+      children: [
+        {
+          path: '/login',
+          name: 'Login',
+          component: Login
+        },
+        {
+          path: '/registro',
+          name: 'Registro',
+          component: Registro
+        }
+      ]
+    },
+    {
+      path: '/home',
+      name: 'Home',
+      component: LayoutUCan,
+      children: [
+        {
+          path: '/home',
+          name: 'Home',
+          component: Home,
+          meta: {
+            requiresAuth: true
+          }
+        }
+      ]
     }
-}
-
 ]
 
 const router = new VueRouter({

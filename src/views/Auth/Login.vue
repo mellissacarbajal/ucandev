@@ -1,30 +1,48 @@
 <template>
-    <section>
-        <b-field>
-            <b-input v-model="email" 
-                placeholder="Correo"
-                type="email"
-                icon="email">
-            </b-input>
-        </b-field>
-
-        <b-field>
-            <b-input v-model="password" 
-                type="password"
-                icon="email"
-                placeholder="Contraseña">
-            </b-input>
-        </b-field>
-        <b-field>
-            <p class="control">
-                <button class="button is-primary" @click="login">
-                  Login
-                </button>
-            </p>
-        </b-field>
+    <section class="hero is-primary is-fullheight">
+        <div class="hero-body">
+            <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-5-tablet is-4-desktop is-3-widescreen">
+                <form action="" class="box">
+                    <div class="field">
+                    <label for="" class="label">Correo</label>
+                    <div class="control has-icons-left">
+                        <input type="email" v-model="email" placeholder="e.g. bobsmith@gmail.com" class="input" required>
+                        <span class="icon is-small is-left">
+                        <i class="fa fa-envelope"></i>
+                        </span>
+                    </div>
+                    </div>
+                    <div class="field">
+                    <label for="" class="label">Password</label>
+                    <div class="control has-icons-left">
+                        <input type="password" v-model="password" placeholder="*******" class="input" required>
+                        <span class="icon is-small is-left">
+                        <i class="fa fa-lock"></i>
+                        </span>
+                    </div>
+                    </div>
+                    <div class="field">
+                    <label for="" class="checkbox">
+                        <input type="checkbox">
+                    Recordarme
+                    </label>
+                    </div>
+                    <div class="field">
+                    <button @click="login" class="button is-primary">
+                        Login
+                    </button>
+                    </div>
+                </form>
+                </div>
+            </div>
+            </div>
+        </div>
     </section>
 </template>
 <script>
+
 import firebase from 'firebase'
 export default {
     name:'login',
