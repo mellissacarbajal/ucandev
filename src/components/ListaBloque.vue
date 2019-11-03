@@ -27,8 +27,9 @@
                     </header>
                     <section class="modal-card-body">
                         <div v-if="tipoBloqueSeleccionado===null">
-                          <button type="button" class="button is-primary" @click="modalIngresar('BloqueLeer')">Leer</button> 
+                          <button type="button" class="button is-primary" @click="modalIngresar('BloqueLeer')">Leer</button>  
                           <button type="button" class="button is-primary" @click="modalIngresar('BloqueVariable')">Sentencia</button>
+                          <button type="button" class="button is-primary" @click="modalIngresar('BloqueInicializar')">Inicializar variable</button>
                           <button type="button" class="button is-primary" @click="modalIngresar('BloqueImprimir')">Escribir</button> 
                           <button type="button" class="button is-primary" @click="modalIngresar('BloqueWhile')">Mientras</button> 
                           <button type="button" class="button is-primary" @click="modalIngresar('BloqueDoWhile')">Hacer/Mientras</button> 
@@ -39,7 +40,10 @@
                         </div>
                         <div v-if="tipoBloqueSeleccionado=='BloqueVariable'">
                           Ingrese sentencia: <input v-model="nuevoBloque.value" />
-                        </div> 
+                        </div>
+                        <div v-if="tipoBloqueSeleccionado=='BloqueInicializar'">
+                          Iniacialice la variable: <input v-model="nuevoBloque.value" />
+                        </div>
                         <div v-if="tipoBloqueSeleccionado=='BloqueImprimir'">
                           Ingrese el contenido a imprimir: <input v-model="nuevoBloque.value"/>
                         </div> 

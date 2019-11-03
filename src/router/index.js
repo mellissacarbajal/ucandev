@@ -4,7 +4,6 @@ import Home from '../views/Home.vue'
 import Login from '../views/Auth/Login.vue'
 import Registro from '../views/Auth/Registro.vue'
 import firebase from 'firebase'
-import AuthLayout from '../views/Layout/AuthLayout.vue'
 import LayoutUCan from '../views/Layout/LayoutUCan.vue'
 
 Vue.use(VueRouter)
@@ -15,21 +14,14 @@ const routes = [
       redirect: '/login'
     },
     {
-      path: '/',
-      redirect: '/login',
-      component: AuthLayout,
-      children: [
-        {
-          path: '/login',
-          name: 'Login',
-          component: Login
-        },
-        {
-          path: '/registro',
-          name: 'Registro',
-          component: Registro
-        }
-      ]
+      path: '/login',
+      name: 'Login',
+      component: Login
+    },
+    {
+      path: '/registro',
+      name: 'Registro',
+      component: Registro
     },
     {
       path: '/home',

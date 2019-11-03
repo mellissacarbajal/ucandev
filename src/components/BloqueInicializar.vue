@@ -4,7 +4,7 @@
             <div class="col-12" >
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Sentencia</h5>
+                        <h5 class="card-title">Inicializar variable</h5>
                             <p class="card-text">{{ bloque.value }}
                             {{variable}}</p>
                     </div>
@@ -18,7 +18,7 @@
 <script>
 
 export default {
-  name: 'bloqueVariable',
+  name: 'bloqueInicializar',
   props: ["bloque"],
   data() {
     return {

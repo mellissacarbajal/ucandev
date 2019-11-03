@@ -25,7 +25,9 @@ String.prototype.format = function() {
 
 const templates = {
   'BloqueLeer': "let {0} = leerDato()\n",
+  //contador=contador
   'BloqueVariable': "{0}\n",
+  'BloqueInicializar': "let {0}",
   'BloqueImprimir': "escribirDato({0});\n",
   'BloqueWhile': "while({0})\n {\n {1} \n};\n",
   'BloqueDoWhile': "do{\n {0} \n while({1})\n};\n",
@@ -72,6 +74,9 @@ export default {
           if(bloque.type === 'BloqueLeer'){
             resultCode += templates[bloque.type].format(bloque.value)
           } else if(bloque.type === 'BloqueVariable') {
+            resultCode += templates[bloque.type].format(bloque.value)
+          }
+          else if(bloque.type === 'BloqueInicializar') {
             resultCode += templates[bloque.type].format(bloque.value)
           }
           else if(bloque.type === 'BloqueImprimir') {

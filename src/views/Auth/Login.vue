@@ -4,7 +4,7 @@
             <div class="container">
             <div class="columns is-centered">
                 <div class="column is-5-tablet is-4-desktop is-3-widescreen">
-                <form action="" class="box">
+                <div class="box">
                     <div class="field">
                     <label for="" class="label">Correo</label>
                     <div class="control has-icons-left">
@@ -17,7 +17,7 @@
                     <div class="field">
                     <label for="" class="label">Password</label>
                     <div class="control has-icons-left">
-                        <input type="password" v-model="password" placeholder="*******" class="input" required>
+                        <input type="password" v-model="password" placeholder="***" class="input" required>
                         <span class="icon is-small is-left">
                         <i class="fa fa-lock"></i>
                         </span>
@@ -33,8 +33,11 @@
                     <button @click="login" class="button is-primary">
                         Login
                     </button>
+                    <button @click="login" class="button is-primary">
+                        Registrarse
+                    </button>
                     </div>
-                </form>
+                </div>
                 </div>
             </div>
             </div>
@@ -63,6 +66,8 @@ export default {
                 }
             );
         }
+        
+
     }
 }
 </script>
